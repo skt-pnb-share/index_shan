@@ -215,14 +215,14 @@ function RacingLine(filenm) {
 
       // Initialize an Y axis
       y = d3.scaleLinear().domain([0,1])
-              .range([margin.top+10, height-100]); // 설명: 모르겠다. 원래는 [height, 4*margin.top]이었는데 위치를 바꿨더니 1등이 위로가고 5가 아래로갔음. heigh-100 하니까 맨 아래 밑에 공간도 생김
+              .range([margin.top+10, height-70]); // 설명: 모르겠다. 원래는 [height, 4*margin.top]이었는데 위치를 바꿨더니 1등이 위로가고 5가 아래로갔음. heigh-100 하니까 맨 아래 밑에 공간도 생김
       var yAxis = d3.axisLeft()
                   .scale(y)
                   .ticks(0) // 설명: 0을 제외한 틱의 개수. 걍 0으로 해서 X축 없애버렸음.
                   .tickFormat(d3.format("d")) // 설명: 3.5, 4.5 이런 소수점은 안보이게 Integer로 제한
                   //.tickSizeInner(-(width-100));
       svg.append("g")
-          .attr("transform", `translate(10,100)`) //설명: Y축의 길이를 결정해주는 듯. (좌우로 어디에 위치할지, 위아래로 어디에 위치할지). 원래는 (10,0)이었는데 아래로 늘어트리려고 (10, 50)으로 변경
+          .attr("transform", `translate(10,70)`) //설명: Y축의 길이를 결정해주는 듯. (좌우로 어디에 위치할지, 위아래로 어디에 위치할지). 원래는 (10,0)이었는데 아래로 늘어트리려고 (10, 50)으로 변경
           .attr("class","y axis")
           .attr("clip-path", "url(#yaxisclip)")
 
